@@ -10,10 +10,8 @@ export default function AppRouter() {
   return (
     <Router>
       <Switch>
-        <Route exact path={["/login"]} component={Login} />
-        <PrivateRoute exact path={["/empleados"]} component={ Empleados } />
-       
-        
+        <Route exact path={["/", "/login"]} component={Login} />    {/*  este codigo es para que al gargar pagina lo haga dede login */}
+        <PrivateRoute exact path={["/empleados"]} component={Empleados} />
 
         <Route
           path={"*"}

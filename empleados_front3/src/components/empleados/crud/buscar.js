@@ -18,26 +18,32 @@ const columns = [
     text: "NOMBRE",
   },
   {
-    dataField: "apellido_p",
-    text: "APELLIDO",
+    dataField: "nit",
+    text: "NIT",
   },
 
   {
-    dataField: "apellido_m",
-    text: "SECOND APELLIDO",
-  },
-  {
     dataField: "telefono",
     text: "TELEFONO",
+  },
+  {
+    dataField: "direccion",
+    text: "DIRECCION",
   },
   {
     dataField: "mail",
     text: "MAIL",
   },
   {
-    dataField: "direccion",
-    text: "DIRECCION",
+    dataField: "descripcion",
+    text: "DESCRIPCION",
   },
+  {
+    dataField: "firma",
+    text: "FIRMA",
+  },
+
+  
 ];
 
 export default class EmpleadosBuscar extends React.Component {
@@ -153,7 +159,7 @@ export default class EmpleadosBuscar extends React.Component {
         <Loading show={this.state.Loading} />
 
         <Row>
-          <h1>BUSCAR EMPLEADOS</h1>
+          <h1>BUSCAR REPORTE</h1>
         </Row>
 
         <Row>

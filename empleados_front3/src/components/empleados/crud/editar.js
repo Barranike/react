@@ -25,11 +25,13 @@ export default class EmpleadosEditar extends React.Component {
       loading: false,
       empleado: {
         nombre: "",
-        apellido_p: "",
-        apellido_m: "",
+        nit: "",
         telefono: "",
-        mail: "",
         direccion: "",
+        mail: "",
+        descripcion: "",
+        firma: ""
+        
       },
     };
     this.onExitedMessage = this.onExitedMessage.bind(this);
@@ -127,7 +129,7 @@ export default class EmpleadosEditar extends React.Component {
         <Loading show={this.state.loading}></Loading>
 
         <Row>
-          <h1>EDITAR Empleados</h1>
+          <h1>EDITAR REPORTE</h1>
         </Row>
         <Row>
           <Form>
@@ -140,18 +142,10 @@ export default class EmpleadosEditar extends React.Component {
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formBasic">
-              <Form.Label>APELLIDO</Form.Label>
+              <Form.Label>Nit</Form.Label>
               <Form.Control
-                value={this.state.empleado.apellido_p}
-                onChange={(e) => this.setValue("apellido_p", e.target.value)}
-              />
-            </Form.Group>
-
-            <Form.Group className="mb-3" controlId="formBasic">
-              <Form.Label>SECOND APELLIDO</Form.Label>
-              <Form.Control
-                value={this.state.empleado.apellido_m}
-                onChange={(e) => this.setValue("apellido_m", e.target.value)}
+                value={this.state.empleado.nit}
+                onChange={(e) => this.setValue("nit", e.target.value)}
               />
             </Form.Group>
 
@@ -164,6 +158,14 @@ export default class EmpleadosEditar extends React.Component {
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formBasic">
+              <Form.Label>DIRECCION</Form.Label>
+              <Form.Control
+                value={this.state.empleado.direccion}
+                onChange={(e) => this.setValue("direccion", e.target.value)}
+              />
+            </Form.Group>
+
+            <Form.Group className="mb-3" controlId="formBasic">
               <Form.Label>MAIL</Form.Label>
               <Form.Control
                 value={this.state.empleado.mail}
@@ -172,10 +174,18 @@ export default class EmpleadosEditar extends React.Component {
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formBasic">
-              <Form.Label>DIRECCION</Form.Label>
-              <Form.Control
-                value={this.state.empleado.direccion}
-                onChange={(e) => this.setValue("direccion", e.target.value)}
+              <Form.Label>DESCRIPCION</Form.Label>
+              <Form.Control as="textarea" rows={3}
+                value={this.state.empleado.descripcion}
+                onChange={(e) => this.setValue("descripcion", e.target.value)}
+              />
+            </Form.Group>
+
+            <Form.Group className="mb-3" controlId="formBasic">
+              <Form.Label>FIRMA</Form.Label>
+              <Form.Control as="textarea" rows={3}
+                value={this.state.empleado.firma}
+                onChange={(e) => this.setValue("firma", e.target.value)}
               />
             </Form.Group>
 
@@ -199,7 +209,7 @@ export default class EmpleadosEditar extends React.Component {
                 })
               }
             >
-              GUARDAR EMPLEADO
+              GUARDAR REPORTE
             </Button>
           </Form>
         </Row>

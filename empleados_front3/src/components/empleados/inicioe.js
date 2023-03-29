@@ -18,6 +18,7 @@ export default class Empleados extends React.Component {
   }
   changeTab(tab) {
     this.setState({ currentTab: tab });
+   
   }
   setIdEmpleado(id) {
     this.setState({ _id: id });
@@ -34,7 +35,8 @@ export default class Empleados extends React.Component {
             fill
             variant="tabs"
             defaultActiveKey="buscar"
-            onSelect={(eventKey) => this.setState({ currentTab: eventKey })}
+            onSelect={(eventKey) =>
+               this.setState({ currentTab: eventKey })}
           >
             <Nav.Item>
               <Nav.Link eventKey="buscar">Buscar</Nav.Link>
@@ -49,9 +51,11 @@ export default class Empleados extends React.Component {
             <EmpleadosBuscar
               changeTab={this.changeTab}
               setIdEmpleado={this.setIdEmpleado}
-            />
+                          />
+                        
           ) : this.state.currentTab === "crear" ? (
             <EmpleadosCrear changeTab={this.changeTab} />
+            
           ) : (
             <EmpleadosEditar
               changeTab={this.changeTab}

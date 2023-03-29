@@ -7,11 +7,12 @@ let response = {
 exports.create = function (req, res) {
   let empleado = new Empleado({
     nombre: req.body.nombre,
-    apellido_p: req.body.apellido_p,
-    apellido_m: req.body.apellido_m,
+    nit: req.body.nit,
     telefono: req.body.telefono,
-    mail: req.body.mail,
     direccion: req.body.direccion,
+    mail: req.body.mail,
+    descripcion: req.body.descripcion,
+    firma: req.body.firma
   });
 
   empleado.save(function (err) {
@@ -44,11 +45,12 @@ exports.findOne = function (req, res) {
 exports.update = function (req, res) {
   let empleado = {
     nombre: req.body.nombre,
-    apellido_p: req.body.apellido_p,
-    apellido_m: req.body.apellido_m,
+    nit: req.body.nit,
     telefono: req.body.telefono,
+    direccion: req.body.direccion,
     mail: req.body.mail,
-    direccion: req.body.direccion
+    descripcion: req.body.descripcion,
+    firma: req.body.firma
   };
 
   Empleado.findByIdAndUpdate(req.params.id, { $set: empleado }, function (err) {
