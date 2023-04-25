@@ -176,13 +176,8 @@ export default class EmpleadosCrear extends React.Component {
             <Form.Group  className="mb-3" controlId="formBasic">
               <Form.Label>FIRMA</Form.Label>
              
-                <Form.Control
-                  type="text"
-                  as="textarea"
-                  rows={3}
-                  value={this.state.firmaa}
-                  onChange={(e) => this.setValue("firma", e.target.value)}
-                />
+              <SignatureCanvas ref={this.signatureCanvas} />
+              onChange={(e) => this.setValue("firma", e.target.signatureCanvas)}
               
             </Form.Group>
           </Form>
